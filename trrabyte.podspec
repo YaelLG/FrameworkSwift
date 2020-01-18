@@ -4,9 +4,9 @@ Pod::Spec.new do |spec|
   spec.version      = "0.0.1"
   spec.summary      = "Framework created to develop in an easy way, getting implementation of components faster"
 
-  spec.description  = Framework created to develop in an easy way, getting implementation of components faster. It includes Alert, Connections, Dropdown, Utils.
+  spec.description  = "Framework created to develop in an easy way, getting implementation of components faster. It includes Alert, Connections, Dropdown, Utils."
 
-  spec.homepage     = "https://github.com/YaelLG/FrameworkSwift"
+  spec.homepage     = "https://trrabyte.com"
  
   spec.license      = { :type => "MIT", :file => "LICENSE" }
 
@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   
   spec.platform     = :ios, "11.0"
   
-  spec.source       = { :git => "https://github.com/YaelLG/FrameworkSwift", :tag => "0.0.1" }
+  spec.source       = { :git => "https://github.com/YaelLG/FrameworkSwift.git", :tag => "0.0.1" }
 
   spec.source_files  = "trrabyte/trrabyte/**/*{.swift}"
   spec.exclude_files = "Classes/Exclude"
