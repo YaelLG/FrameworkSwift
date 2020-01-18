@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   
   spec.platform     = :ios, "11.0"
   
-  spec.source       = { :git => "https://github.com/YaelLG/FrameworkSwift.git", :tag => "0.0.1" }
+  spec.source       = { :git => "git@github.com:YaelLG/FrameworkSwift.git", :tag => "0.0.1" }
 
   spec.source_files  = "trrabyte/trrabyte/trrabyte/**/*{.swift}"
   spec.exclude_files = "Classes/Exclude"
