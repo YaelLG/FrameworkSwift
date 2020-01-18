@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   
   spec.source       = { :git => "https://github.com/YaelLG/FrameworkSwift.git", :tag => "0.0.1" }
 
-  spec.source_files  = "trrabyte/trrabyte/**/*{.swift}"
+  spec.source_files  = "trrabyte/trrabyte/trrabyte/**/*{.swift}"
   spec.exclude_files = "Classes/Exclude"
 
 end
