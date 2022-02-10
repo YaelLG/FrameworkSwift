@@ -1,9 +1,9 @@
 //
-//  AppDelegate.swift
-//  Zygoo
+//  UIColor+Extension.swift
+//  Terrabyte
 //
-//  Created by Diego Luna on 10/11/19.
-//  Copyright © 2019 Terrabyte. All rights reserved.
+//  Created by Diego Yael Luna Gasca on 3/30/20.
+//  Copyright © 2020 Terrabyte. All rights reserved.
 //
 
 import Foundation
@@ -72,45 +72,18 @@ public extension UIColor {
                        blue: min(blue + proportion, 1.0),
                        alpha: alpha)
     }
-    
-    @objc class var zygooPurple: UIColor {
-        return UIColor(red: 101.0 / 255.0, green: 14.0 / 255.0, blue: 170.0 / 255.0, alpha: 1.0)
-    }
-    
-    @objc class var zygooYellow: UIColor {
-        return UIColor(red: 249.0 / 255.0, green: 171.0 / 255.0, blue: 45.0 / 255.0, alpha: 1.0)
-    }
-    
-    @objc class var zygooPurpleLight: UIColor {
-        return UIColor(red: 145.0 / 255.0, green: 20.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0)
-    }
-    
-    @objc class var zygooGreenLight: UIColor {
-        return UIColor(red: 35.0 / 255.0, green: 196.0 / 255.0, blue: 97.0 / 255.0, alpha: 1.0)
-    }
-    
-    @objc class var zygooGreenDark: UIColor {
-        return UIColor(red: 5.0 / 255.0, green: 171.0 / 255.0, blue: 68.0 / 255.0, alpha: 1.0)
-    }
-    
-    @objc class var zygooBlackText: UIColor {
-        return UIColor(red: 66.0 / 255.0, green: 66.0 / 255.0, blue: 66.0 / 255.0, alpha: 1.0)
-    }
-    
-    @objc class var zygooBlackTransparent: UIColor {
-        return UIColor(red: 0.0 / 255.0, green: 0.0 / 255.0, blue: 0.0 / 255.0, alpha: 0.3)
-    }
-    
-    @objc class var zygooBlueMan: UIColor {
-        return UIColor(red: 61.0 / 255.0, green: 156.0 / 255.0, blue: 227.0 / 255.0, alpha: 0.3)
-    }
-    
-    @objc class var zygooPinkWoman: UIColor {
-        return UIColor(red: 211.0 / 255.0, green: 103.0 / 255.0, blue: 254.0 / 255.0, alpha: 0.3)
-    }
-    
-    @objc class var zygooPink: UIColor {
-        return UIColor(red: 251.0 / 255.0, green: 31.0 / 255.0, blue: 127.0 / 255.0, alpha: 1)
-        
-    }
+}
+
+struct PrimaryColor {
+    public let primary: UIColor = UIColor(red: 42, green: 107, blue: 200)
+    public let disabledGrey = UIColor(red: 184, green: 196, blue: 203)
+}
+
+struct SecondaryColor {
+    public let titleContent: UIColor = UIColor(red: 18, green: 18, blue: 18)
+    public let obscure: UIColor = UIColor(red: 51, green: 41, blue: 39)
+    public let content: UIColor = UIColor(red: 112, green: 105, blue: 103)
+    public let disable: UIColor = UIColor(red: 184, green: 180, blue: 180)
+    public let divider: UIColor = UIColor(red: 184, green: 180, blue: 180, alpha: 0.4)
+    public let contentDisable: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
 }

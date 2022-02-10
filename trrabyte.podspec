@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "trrabyte"
-  spec.version      = "0.0.1"
+  spec.version      = "1.0.0"
   spec.summary      = "Framework created to develop in an easy way, getting implementation of components faster"
 
   spec.description  = "Framework created to develop in an easy way, getting implementation of components faster. It includes Alert, Connections, Dropdown, Utils."
