@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Loading: XibView {
+open class Loading: XibView {
     
     private var loadingImages: [UIImage] = [];
     

@@ -15,7 +15,7 @@ protocol KeyboardToolDelegate: AnyObject {
     func didClicButtonHide(button: UIButton)
 }
 
-class KeyboardTool: UIView {
+open class KeyboardTool: UIView {
 
     private weak var delegate: KeyboardToolDelegate?
     @IBOutlet private weak var previousButton: UIButton! {

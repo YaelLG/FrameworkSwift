@@ -47,7 +47,7 @@ struct RequestError: Error {
     }
 }
 
-class Request: NSObject {
+open class Request: NSObject {
     func makeRequestWith<T: Decodable>(_ method: HTTPMethodRequest,
                                        model: T.Type,
                                        endPoint: String,

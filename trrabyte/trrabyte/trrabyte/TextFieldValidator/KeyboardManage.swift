@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import UserNotificationsUI
 
-class KeyboardManage: NSObject {
+open class KeyboardManage: NSObject {
     
     private var scroll: UIScrollView?
     private var inputs: [UIView] = []

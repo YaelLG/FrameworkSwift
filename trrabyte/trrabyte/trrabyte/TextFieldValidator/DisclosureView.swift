@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class DisclosureView: UIView {
+open class DisclosureView: UIView {
     
     @IBInspectable var color: UIColor = .blue
 

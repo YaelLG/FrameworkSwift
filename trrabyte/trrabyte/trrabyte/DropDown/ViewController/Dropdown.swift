@@ -13,7 +13,7 @@ protocol OptionDropdownSelectedDelegate{
     func optionSelected(option: Int?, viewIdentifier: Int?)
 }
 
-class Dropdown: UIViewController {
+open class Dropdown: UIViewController {
     let xibDropdownName = "DropdownCell"
     
     @IBOutlet private weak var view_bk: UIView!

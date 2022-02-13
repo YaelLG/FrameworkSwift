@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CommonCrypto
 
-class Cache {
+open class Cache {
     static let shared = Cache(sizeMB: 20, concurrentOperations: 5)
     private let operationQueue: OperationQueue
     private let imagesPath: String

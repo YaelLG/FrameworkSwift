@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Toast: UIView {
+open class Toast: UIView {
     private let margin: CGFloat = 40
     private let marginLabel: CGFloat = 20
     private let time: CGFloat = 3
