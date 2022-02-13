@@ -11,8 +11,8 @@ import UIKit
 
 public extension UIView {
         
-    static func initFromNib<T: UIView>() -> T {
-        let frameworkBundle = Bundle(for: KeyboardTool.self)
+    static func initFromNib<T: UIView>(className: AnyClass) -> T {
+        let frameworkBundle = Bundle(for: className)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("trrabyte.bundle")
         let resourceBundle = Bundle(url: bundleURL!)
         guard let view = resourceBundle?.loadNibNamed(String(describing: self), owner: nil, options: nil)?[0] as? T else {

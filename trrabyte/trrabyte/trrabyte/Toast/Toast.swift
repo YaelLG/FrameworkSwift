@@ -54,7 +54,7 @@ open class Toast: UIView {
     }
     
     fileprivate class func createInstance() -> Toast {
-        guard let view = Toast.initFromNib() as? Toast else { return Toast() }
+        guard let view = Toast.initFromNib(className: Toast.self) as? Toast else { return Toast() }
         return view
     }
     

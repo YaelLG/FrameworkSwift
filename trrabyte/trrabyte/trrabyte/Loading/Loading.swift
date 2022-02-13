@@ -21,8 +21,8 @@ open class Loading: XibView {
         super.awakeFromNib()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: UIScreen.main.nativeBounds)
+    public init(frame: CGRect) {
+        super.init(frame: UIScreen.main.nativeBounds, className: Loading.self)
         for index in 1..<13 {
             let stringFormat = index <= 9 ? "g_0%d" : "g_%d";
             let name = String(format: stringFormat, index)

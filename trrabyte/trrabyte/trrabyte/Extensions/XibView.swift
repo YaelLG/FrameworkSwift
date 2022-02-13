@@ -13,18 +13,17 @@ open class XibView: UIView {
     open var view: UIView?
     open var xibName: String?
     
-    override public init(frame: CGRect) {
+    public init(frame: CGRect, className: AnyClass) {
         super.init(frame: frame)
-        setupXib()
+        setupXib(className: className)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupXib()
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    open func setupXib() {
-        guard self.view.isNull, let mainView = loadViewFromNib() else { return }
+    open func setupXib(className: AnyClass) {
+        guard self.view.isNull, let mainView = loadViewFromNib(className: className) else { return }
         
         translatesAutoresizingMaskIntoConstraints = false
         mainView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,16 +33,16 @@ open class XibView: UIView {
         view = mainView
     }
     
-    open func loadViewFromNib() -> UIView? {
-        let frameworkBundle = Bundle(for: Loading.self)
+    open func loadViewFromNib(className: AnyClass) -> UIView? {
+        let frameworkBundle = Bundle(for: className)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("trrabyte.bundle")
         let resourceBundle = Bundle(url: bundleURL!)
-        let nib = UINib(nibName: className(), bundle: resourceBundle)
+        let nib = UINib(nibName: getClassName(), bundle: resourceBundle)
         let view = nib.instantiate(withOwner: self, options: nil).compactMap { $0 as? UIView}.first
         return view
     }
     
-    open func className() -> String {
+    open func getClassName() -> String {
         if let xibName = xibName {
             return xibName
         } else {

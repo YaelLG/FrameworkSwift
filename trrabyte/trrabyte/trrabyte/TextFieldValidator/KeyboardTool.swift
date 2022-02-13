@@ -46,7 +46,7 @@ open class KeyboardTool: UIView {
     }
     
     open class func instance(delegate: KeyboardToolDelegate) -> KeyboardTool {
-        guard let view = KeyboardTool.initFromNib() as? KeyboardTool else {
+        guard let view = KeyboardTool.initFromNib(className: KeyboardTool.self) as? KeyboardTool else {
             return KeyboardTool()
         }
         view.delegate = delegate
