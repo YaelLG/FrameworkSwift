@@ -12,7 +12,7 @@ import UIKit
 public extension UIView {
         
     static func initFromNib<T: UIView>() -> T {
-        guard let view = Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?[0] as? T else {
+        guard let view = Bundle(identifier: "com.framework.trrabyte")?.loadNibNamed(String(describing: self), owner: nil, options: nil)?[0] as? T else {
             return T()
         }
         return view
