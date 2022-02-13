@@ -215,18 +215,10 @@
 		F1E5A5C723D2CAC900DA193F /* DropDown */ = {
 			isa = PBXGroup;
 			children = (
-				F1E5A5C823D2CAC900DA193F /* Storyboard */,
+				F1E5A5C923D2CAC900DA193F /* DropDown.storyboard */,
 				F1E5A5CA23D2CAC900DA193F /* ViewController */,
 			);
 			path = DropDown;
-			sourceTree = "<group>";
-		};
-		F1E5A5C823D2CAC900DA193F /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				F1E5A5C923D2CAC900DA193F /* DropDown.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		F1E5A5CA23D2CAC900DA193F /* ViewController */ = {

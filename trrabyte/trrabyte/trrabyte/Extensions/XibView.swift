@@ -35,7 +35,7 @@ open class XibView: UIView {
     }
     
     open func loadViewFromNib() -> UIView? {
-        let nib = UINib(nibName: className(), bundle: Bundle(identifier: "com.framework.trrabyte"))
+        let nib = UINib(nibName: className(), bundle: nil)
         let view = nib.instantiate(withOwner: self, options: nil).compactMap { $0 as? UIView}.first
         return view
     }
