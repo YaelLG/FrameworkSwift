@@ -23,7 +23,6 @@
 		B42F503127B32900004F9BD8 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F502527B32900004F9BD8 /* Date+Utils.swift */; };
 		B42F503527B32907004F9BD8 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F503327B32906004F9BD8 /* GradientLayer.swift */; };
 		B42F503627B32907004F9BD8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F503427B32906004F9BD8 /* GradientView.swift */; };
-		B42F503A27B32916004F9BD8 /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42F503827B32915004F9BD8 /* Loading.xib */; };
 		B42F503B27B32916004F9BD8 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F503927B32915004F9BD8 /* Loading.swift */; };
 		B42F504027B32920004F9BD8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F503E27B32920004F9BD8 /* Request.swift */; };
 		B42F504727B32927004F9BD8 /* KeyboardTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42F504227B32927004F9BD8 /* KeyboardTool.xib */; };
@@ -32,6 +31,7 @@
 		B42F504B27B32927004F9BD8 /* DisclosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F504627B32927004F9BD8 /* DisclosureView.swift */; };
 		B42F505827B32980004F9BD8 /* Toast.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42F505627B32980004F9BD8 /* Toast.xib */; };
 		B42F505927B32980004F9BD8 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F505727B32980004F9BD8 /* Toast.swift */; };
+		B4BF01DF27B9AD810031968C /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42F503827B32915004F9BD8 /* Loading.xib */; };
 		F1E5A5BE23D2CA9700DA193F /* trrabyte.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E5A5BC23D2CA9700DA193F /* trrabyte.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1E5A5E223D2CAC900DA193F /* DropDown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E5A5C923D2CAC900DA193F /* DropDown.storyboard */; };
 		F1E5A5E323D2CAC900DA193F /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E5A5CB23D2CAC900DA193F /* Dropdown.swift */; };
@@ -315,9 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B42F503A27B32916004F9BD8 /* Loading.xib in Resources */,
 				B42F505827B32980004F9BD8 /* Toast.xib in Resources */,
 				B42F504727B32927004F9BD8 /* KeyboardTool.xib in Resources */,
+				B4BF01DF27B9AD810031968C /* Loading.xib in Resources */,
 				F1E5A5E223D2CAC900DA193F /* DropDown.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
