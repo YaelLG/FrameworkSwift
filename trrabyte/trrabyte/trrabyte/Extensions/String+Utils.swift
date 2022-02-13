@@ -171,15 +171,6 @@ public extension String {
         let widthScreen = UIScreen.main.bounds.width - 30
         return ceil(min(boundingBox.width, widthScreen)) + margin
     }
-    
-    func underlineText() -> NSMutableAttributedString {
-        let textRange = NSRange(location: 0, length: self.count)
-        let attributedText = NSMutableAttributedString(string: self)
-        attributedText.addAttribute(.underlineStyle,
-                                    value: NSUnderlineStyle.single.rawValue,
-                                    range: textRange)
-        return attributedText
-    }
 }
 
 public extension NSAttributedString {
