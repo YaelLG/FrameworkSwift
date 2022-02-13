@@ -69,7 +69,7 @@ open class Dropdown: UIViewController {
         delegate?.optionSelected(option: nil, viewIdentifier:tag)
     }
     
-    func present() {
+    public func present() {
         guard let window = UIApplication.shared.windows.first else { return }
         window.addSubview(self.view)
     }

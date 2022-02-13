@@ -28,7 +28,7 @@ open class Toast: UIView {
         }
     }
     
-    func show(text: String) {
+    public func show(text: String) {
         DispatchQueue.main.async {
             guard let shared = Toast.shared else { return }
             shared.stopTimer()
@@ -37,7 +37,7 @@ open class Toast: UIView {
         }
     }
     
-    func hide() {
+    public func hide() {
         stopTimer()
         UIView.animate(withDuration: 0.5, animations: { self.alpha = 0 }) { _ in
             Toast.shared?.removeFromSuperview()

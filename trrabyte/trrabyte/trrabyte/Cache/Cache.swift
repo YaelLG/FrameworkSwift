@@ -33,7 +33,7 @@ open class Cache {
     }
     
     //Ask for an specific image
-    func imageWithKey(_ key: String) -> UIImage? {
+    public func imageWithKey(_ key: String) -> UIImage? {
         let isPNG = key.contains(".png") || key.contains(".PNG")
         let md5Key = key.md5() + "\(isPNG ? ".png" : ".jpg")"
         let defaultManager = FileManager.default
@@ -47,7 +47,7 @@ open class Cache {
         }
     }
     
-    func searchImageWithUrl(url: String, cache: Bool, success: @escaping (UIImage?) -> Void) {
+    public func searchImageWithUrl(url: String, cache: Bool, success: @escaping (UIImage?) -> Void) {
         if let image = imageWithKey(url) {
             success(image)
         } else {
@@ -57,7 +57,7 @@ open class Cache {
         }
     }
     
-    func downloadImage(from url: String, cache: Bool,
+    public func downloadImage(from url: String, cache: Bool,
                        successImage: @escaping (UIImage?) -> Void) {
         guard let urlRequest = URL(string: url),
               let data = try? Data(contentsOf: urlRequest),
@@ -70,13 +70,13 @@ open class Cache {
     }
     
     //Remove the whole directory's image
-    func clearImagesCache() throws {
+    public func clearImagesCache() throws {
         let fileManager = FileManager.default
         try fileManager.removeItem(atPath: imagesPath)
     }
     
     //Return path where you've saved the file
-    func saveImage(image: UIImage, key: String) {
+    public func saveImage(image: UIImage, key: String) {
         let isPNG = key.contains(".png") || key.contains(".PNG")
         let data = isPNG ? image.pngData() : image.jpegData(compressionQuality: 0.1)
         let md5Key = key.md5() + "\(isPNG ? ".png" : ".jpg")"
