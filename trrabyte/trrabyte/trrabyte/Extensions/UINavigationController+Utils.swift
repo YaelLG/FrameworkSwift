@@ -20,14 +20,7 @@ public extension UINavigationController {
         self.setNavigationBarHidden(hide, animated: true)
     }
     
-    func setTitleAttributes() {
-        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.black,
-                          NSAttributedString.Key.font: UIFont().withSize(12)]
-        navigationBar.titleTextAttributes = attributes
-    }
-    
     func changeNavigationBar(color: UIColor = .black) {
-        setTitleAttributes()
         if color == UIColor.clear {
             navigationBar.isTranslucent = true
             navigationBar.setBackgroundImage(UIImage(), for: .default)

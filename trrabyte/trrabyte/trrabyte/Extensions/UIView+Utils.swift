@@ -12,7 +12,10 @@ import UIKit
 public extension UIView {
         
     static func initFromNib<T: UIView>() -> T {
-        guard let view = Bundle(identifier: "com.framework.trrabyte")?.loadNibNamed(String(describing: self), owner: nil, options: nil)?[0] as? T else {
+        let frameworkBundle = Bundle(for: KeyboardTool.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("trrabyte.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
+        guard let view = resourceBundle?.loadNibNamed(String(describing: self), owner: nil, options: nil)?[0] as? T else {
             return T()
         }
         return view
