@@ -17,7 +17,7 @@ open class Loading: XibView {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var animationImageView: UIImageView!
         
-    override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
     }
     
@@ -31,7 +31,7 @@ open class Loading: XibView {
         }
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
