@@ -11,14 +11,14 @@ import UIKit
 
 typealias JSON = [String: Any]
 
-enum HTTPMethodRequest: String {
+public enum HTTPMethodRequest: String {
     case post = "POST"
     case put = "PUT"
     case get = "GET"
     case patch = "PATCH"
 }
 
-enum ServicesStatus: Int {
+public enum ServicesStatus: Int {
     case notAssigned
     case undefined
     case successful
@@ -38,7 +38,7 @@ enum ServicesStatus: Int {
     case badRequest = 400
 }
 
-struct RequestError: Error {
+public struct RequestError: Error {
     var defaultMessage: String = ""
     var statusError: ServicesStatus = .none
     
@@ -48,12 +48,12 @@ struct RequestError: Error {
 }
 
 open class Request: NSObject {
-    func makeRequestWith<T: Decodable>(_ method: HTTPMethodRequest,
-                                       model: T.Type,
-                                       endPoint: String,
-                                       params: [String: Any] = [:],
-                                       onSuccess: @escaping (T) -> Void,
-                                       onError: @escaping (Error) -> Void) {
+    open func makeRequestWith<T: Decodable>(_ method: HTTPMethodRequest,
+                                            model: T.Type,
+                                            endPoint: String,
+                                            params: [String: Any] = [:],
+                                            onSuccess: @escaping (T) -> Void,
+                                            onError: @escaping (Error) -> Void) {
         guard let url = internetConnectionAndURL(onError: onError,
                                                  endPoint: endPoint) else {
             return

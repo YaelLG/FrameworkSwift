@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Array {
+public extension Array {
     subscript(safe index: Index) -> Element? {
         let isValidIndex = index >= 0 && index < count
         return isValidIndex ? self[index] : nil

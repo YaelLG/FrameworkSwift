@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol OptionDropdownSelectedDelegate{
+public protocol OptionDropdownSelectedDelegate{
     func optionSelected(option: Int?, viewIdentifier: Int?)
 }
 

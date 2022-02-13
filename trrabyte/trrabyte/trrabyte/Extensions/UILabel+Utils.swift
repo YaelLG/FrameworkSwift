@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     func setWidthAccordingToFont(margin: CGFloat) {
         let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: frame.height)
         guard let textLabel = text, let fontLabel = font  else { return }

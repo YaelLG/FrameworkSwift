@@ -8,25 +8,25 @@
 
 import UIKit
 
-struct IconCatalog {
+public struct IconCatalog {
     let general: GeneralIconCatalog = GeneralIconCatalog()
 }
 
-struct GeneralIconCatalog {
+public struct GeneralIconCatalog {
     var back: UIImage { UIImage(named: "btn_keyboard_previous") ?? UIImage() }
     var next: UIImage { UIImage(named: "btn_keyboard_next") ?? UIImage() }
     var hide: UIImage { UIImage(named: "btn_keyboard_ocultar") ?? UIImage() }
 }
 
 extension UIImageView {
-    func setImageColor(color: UIColor? = nil) {
+    open func setImageColor(color: UIColor? = nil) {
         var templateImage: UIImage.RenderingMode
         color.isNull ? (templateImage = .automatic) : (templateImage = .alwaysTemplate)
         image = image?.withRenderingMode(templateImage)
         tintColor = color
     }
     
-    func downloadImage(from url: URL, successRequest: @escaping (Bool) -> Void) {
+    open func downloadImage(from url: URL, successRequest: @escaping (Bool) -> Void) {
         getData(from: url) { data, _, error in
             guard let data = data, error == nil else {
                 successRequest(false)
@@ -39,7 +39,7 @@ extension UIImageView {
         }
     }
     
-    func downloadReturnImage(from url: URL, successImage: @escaping (UIImage?) -> Void) {
+    open func downloadReturnImage(from url: URL, successImage: @escaping (UIImage?) -> Void) {
         getData(from: url) { data, _, error in
             guard let data = data, error == nil else {
                 successImage(nil)
@@ -52,7 +52,7 @@ extension UIImageView {
         }
     }
     
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+    open func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
 }

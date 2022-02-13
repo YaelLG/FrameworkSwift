@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
     func dateStringWithFormat(format: String) -> String {
         let dateFormatter = DateFormatter()
         let locale = NSLocale.current

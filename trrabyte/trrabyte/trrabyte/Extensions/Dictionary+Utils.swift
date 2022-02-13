@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Dictionary {
+public extension Dictionary {
     func parseValue(key : String) -> String {
         if let obj = self as? JSON {
             let value = obj[key] as Any

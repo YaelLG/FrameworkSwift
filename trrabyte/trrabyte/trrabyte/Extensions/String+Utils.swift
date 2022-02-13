@@ -10,7 +10,7 @@ import Foundation
 import CommonCrypto
 import UIKit
 
-extension String {
+public extension String {
     static let formatDate = "MMM dd, yyyy"
 
     func md5() -> String {
@@ -182,8 +182,8 @@ extension String {
     }
 }
 
-extension NSAttributedString {
-    internal convenience init?(html: String) {
+public extension NSAttributedString {
+    convenience init?(html: String) {
         guard let data = html.data(using: String.Encoding.utf16, allowLossyConversion: false) else {
             return nil
         }

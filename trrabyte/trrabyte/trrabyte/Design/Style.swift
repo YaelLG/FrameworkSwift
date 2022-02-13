@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Style {
+public struct Style {
     public static let primary = PrimaryColor()
     public static let secondary = SecondaryColor()
     public static let icon = IconCatalog()

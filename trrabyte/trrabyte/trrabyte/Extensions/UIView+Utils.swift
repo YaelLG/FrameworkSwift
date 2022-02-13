@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
         
     static func initFromNib<T: UIView>() -> T {
         guard let view = Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?[0] as? T else {
@@ -171,17 +171,17 @@ extension UIView {
     }
 }
 
-enum ViewFeatures {
+public enum ViewFeatures {
     case rounded, shadow, color(UIColor), bordered(UIColor, CGFloat), image(UIImage),
          roundedView(RoundedType, UIColor), topRounded,
          fullRounded, customRounded(UIRectCorner)
 }
 
-enum RoundedType {
+public enum RoundedType {
     case full, onlyLayer
 }
 
-struct RoundedCorners {
+public struct RoundedCorners {
     
     public let radius: CGFloat
     public let corners: UIRectCorner

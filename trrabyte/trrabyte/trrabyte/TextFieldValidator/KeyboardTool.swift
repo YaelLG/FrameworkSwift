@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol KeyboardToolDelegate: AnyObject {
+public protocol KeyboardToolDelegate: AnyObject {
     func didClicButtonBack(button: UIButton)
     func didClicButtonNext(button: UIButton)
     func didClicButtonHide(button: UIButton)
@@ -45,7 +45,7 @@ open class KeyboardTool: UIView {
         delegate?.didClicButtonHide(button: sender)
     }
     
-    class func instance(delegate: KeyboardToolDelegate) -> KeyboardTool {
+    open class func instance(delegate: KeyboardToolDelegate) -> KeyboardTool {
         guard let view = KeyboardTool.initFromNib() as? KeyboardTool else {
             return KeyboardTool()
         }

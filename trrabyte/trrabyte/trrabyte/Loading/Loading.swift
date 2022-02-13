@@ -35,7 +35,7 @@ open class Loading: XibView {
         super.init(coder: coder)
     }
     
-    func showWithText(_ text: String? = "") {
+    open func showWithText(_ text: String? = "") {
         DispatchQueue.main.async { [weak self] in
             guard let self = self,
                   let window = UIApplication.shared.windows.first else { return }
@@ -49,7 +49,7 @@ open class Loading: XibView {
         }
     }
     
-    func remove() {
+    open func remove() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.2, animations: { [weak self] in
                 self?.alpha = 0

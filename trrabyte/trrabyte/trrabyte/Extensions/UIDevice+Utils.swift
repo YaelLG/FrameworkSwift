@@ -9,7 +9,7 @@
 import UIKit
 import AudioToolbox
 
-extension UIDevice {
+public extension UIDevice {
     
     var isSimulator: Bool {
         #if targetEnvironment(simulator)

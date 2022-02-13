@@ -20,8 +20,8 @@ public final class Associated<T>: NSObject, NSCopying {
     }
 }
 
-extension Associated where T: NSCopying {
-    public func copyWithZone(_ zone: NSZone?) -> AnyObject {
+public extension Associated where T: NSCopying {
+    func copyWithZone(_ zone: NSZone?) -> AnyObject {
         return type(of: self).init(value.copy(with: zone) as! Type)
     }
 }

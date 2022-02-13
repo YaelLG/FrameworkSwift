@@ -19,13 +19,13 @@ open class KeyboardManage: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func scrollConfiguration(scroll: UIScrollView, inputs: [UIView]) {
+    open func scrollConfiguration(scroll: UIScrollView, inputs: [UIView]) {
         self.scroll = scroll
         self.inputs = inputs
         setupInputsScrolling()
     }
     
-    func setupInputsScrolling() {
+    open func setupInputsScrolling() {
         registerKeyboardNotifications()
         for input in inputs {
             let tool = KeyboardTool.instance(delegate: self)
@@ -91,7 +91,7 @@ open class KeyboardManage: NSObject {
 }
 
 extension KeyboardManage: KeyboardToolDelegate {
-    func didClicButtonBack(button: UIButton) {
+    public func didClicButtonBack(button: UIButton) {
         guard let view = getFocusedInput(),
             let index = inputs.firstIndex(where: { $0 == view }) else { return }
         
@@ -102,7 +102,7 @@ extension KeyboardManage: KeyboardToolDelegate {
         currentField.becomeFirstResponder()
     }
     
-    func didClicButtonNext(button: UIButton) {
+    public func didClicButtonNext(button: UIButton) {
         guard let view = getFocusedInput(),
             let index = inputs.firstIndex(where: { $0 == view }) else { return }
         
@@ -113,7 +113,7 @@ extension KeyboardManage: KeyboardToolDelegate {
         currentField.becomeFirstResponder()
     }
     
-    func didClicButtonHide(button: UIButton) {
+    public func didClicButtonHide(button: UIButton) {
         guard let view = getFocusedInput() else { return }
         view.resignFirstResponder()
     }

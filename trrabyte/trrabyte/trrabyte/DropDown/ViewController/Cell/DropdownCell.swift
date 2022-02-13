@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DropdownCell: UICollectionViewCell {
+open class DropdownCell: UICollectionViewCell {
     
     @IBOutlet weak var lb_title: UILabel!
         

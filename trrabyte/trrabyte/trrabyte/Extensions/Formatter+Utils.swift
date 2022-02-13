@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NumberFormatter {
+public extension NumberFormatter {
     class func defaultFormatter(localeId: String = "MX") -> NumberFormatter {
         let formatter = NumberFormatter()
         formatter.locale = Locale(identifier: localeId)
@@ -32,7 +32,7 @@ extension NumberFormatter {
     }
 }
 
-extension Double {
+public extension Double {
     func string(using formatter: NumberFormatter) -> String {
         return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
     }

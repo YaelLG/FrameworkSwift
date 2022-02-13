@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UINavigationController {
+public extension UINavigationController {
     func setTerrabyteStyle() {
         changeNavigationBar(color: .clear)
         navigationBar.tintColor = .black

@@ -74,12 +74,12 @@ public extension UIColor {
     }
 }
 
-struct PrimaryColor {
+public struct PrimaryColor {
     public let primary: UIColor = UIColor(red: 42, green: 107, blue: 200)
     public let disabledGrey = UIColor(red: 184, green: 196, blue: 203)
 }
 
-struct SecondaryColor {
+public struct SecondaryColor {
     public let titleContent: UIColor = UIColor(red: 18, green: 18, blue: 18)
     public let obscure: UIColor = UIColor(red: 51, green: 41, blue: 39)
     public let content: UIColor = UIColor(red: 112, green: 105, blue: 103)
