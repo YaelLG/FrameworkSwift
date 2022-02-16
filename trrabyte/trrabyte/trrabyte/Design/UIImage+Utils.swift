@@ -9,7 +9,7 @@
 import UIKit
 
 public struct IconCatalog {
-    let general: GeneralIconCatalog = GeneralIconCatalog()
+    public let general: GeneralIconCatalog = GeneralIconCatalog()
 }
 
 public struct GeneralIconCatalog {

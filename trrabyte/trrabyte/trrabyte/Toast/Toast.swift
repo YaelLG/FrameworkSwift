@@ -22,7 +22,6 @@ open class Toast: UIView {
         didSet {
             messageLabel.setupRoundedCorners(radius: 5)
             messageLabel.textColor = .white
-            messageLabel.font = UIFont().withSize(16)
             messageLabel.backgroundColor = Style.secondary.contentDisable
             messageLabel.minimumScaleFactor = 0.5
         }
@@ -35,6 +34,10 @@ open class Toast: UIView {
             shared.showWithMessage(text: text)
             shared.startTimer()
         }
+    }
+    
+    public func setFont(_ font: UIFont) {
+        messageLabel.font = font
     }
     
     public func hide() {
