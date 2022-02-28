@@ -11,7 +11,7 @@ import UIKit
 import CommonCrypto
 
 open class Cache {
-    static let shared = Cache(sizeMB: 20, concurrentOperations: 5)
+    public static let shared = Cache(sizeMB: 20, concurrentOperations: 5)
     private let operationQueue: OperationQueue
     private let imagesPath: String
     private let finalSize: UInt64
