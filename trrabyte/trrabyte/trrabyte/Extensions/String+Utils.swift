@@ -100,7 +100,7 @@ public extension String {
         dateFormatter.dateFormat = format
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         guard let date = dateFormatter.date(from: self) else {
-            return Date()
+            return nil
         }
         return date
     }
