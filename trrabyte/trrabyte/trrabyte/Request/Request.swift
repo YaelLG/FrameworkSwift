@@ -39,10 +39,10 @@ public enum ServicesStatus: Int {
 }
 
 public struct RequestError: Error {
-    var defaultMessage: String = ""
+    public var defaultMessage: String = ""
     var statusError: ServicesStatus = .none
     
-    init(status: ServicesStatus) {
+    public init(status: ServicesStatus) {
         statusError = status
     }
 }
