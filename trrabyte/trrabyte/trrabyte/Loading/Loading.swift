@@ -9,33 +9,28 @@
 import Foundation
 import UIKit
 
-open class Loading: XibView {
+open class Loading: UIView {
     
     private var loadingImages: [UIImage] = [];
+    public static var shared: Loading = {
+        return createInstance()
+    }()
     
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var animationImageView: UIImageView!
-        
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var bkView: UIView!
+    @IBOutlet weak var loadimageView: UIImageView!
+    
     open override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    public init(frame: CGRect) {
-        super.init(frame: UIScreen.main.nativeBounds, className: Loading.self)
-        for index in 1..<13 {
-            let stringFormat = index <= 9 ? "g_0%d" : "g_%d";
-            let name = String(format: stringFormat, index)
-            guard let image = UIImage(named: name) else { return }
-            loadingImages.append(image)
-        }
-    }
-    
-    required public init?(coder: NSCoder) {
-        super.init(coder: coder)
+    fileprivate class func createInstance() -> Loading {
+        guard let view = Loading.initFromNib(className: Loading.self) as? Loading else { return Loading() }
+        return view
     }
     
     open func showWithText(_ text: String? = "") {
+        initImages()
         DispatchQueue.main.async { [weak self] in
             guard let self = self,
                   let window = UIApplication.shared.windows.first else { return }
@@ -59,13 +54,22 @@ open class Loading: XibView {
         }
     }
     
+    fileprivate func initImages() {
+        for index in 1..<13 {
+            let stringFormat = index <= 9 ? "g_0%d" : "g_%d";
+            let name = String(format: stringFormat, index)
+            guard let image = UIImage(named: name) else { return }
+            loadingImages.append(image)
+        }
+    }
+    
     fileprivate func startAnimation() {
-        animationImageView.animationImages = loadingImages
-        animationImageView.animationDuration = 1.2;
-        animationImageView.startAnimating();
+        loadimageView.animationImages = loadingImages
+        loadimageView.animationDuration = 1.2;
+        loadimageView.startAnimating();
     }
     
     fileprivate func setupText(_ text: String?) {
-        textLabel.text = text
+        infoLabel.text = text
     }
 }

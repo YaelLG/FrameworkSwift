@@ -1,9 +1,9 @@
 //
 //  XibView.swift
-//  Terrabyte
+//  T-Finance
 //
-//  Created by Diego Yael Luna Gasca on 3/30/20.
-//  Copyright © 2020 Terrabyte. All rights reserved.
+//  Created by Diego Luna on 9/28/17.
+//  Copyright © 2017 T-Finance. All rights reserved.
 //
 
 import UIKit
@@ -12,37 +12,44 @@ open class XibView: UIView {
     
     open var view: UIView?
     open var xibName: String?
-    
-    public init(frame: CGRect, className: AnyClass) {
+
+    public init(frame: CGRect, constraints: Bool) {
         super.init(frame: frame)
-        setupXib(className: className)
+        setupXib(constraints: constraints)
     }
     
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        setupXib(constraints: true)
     }
     
-    open func setupXib(className: AnyClass) {
-        guard self.view.isNull, let mainView = loadViewFromNib(className: className) else { return }
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        mainView.translatesAutoresizingMaskIntoConstraints = false
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupXib(constraints: true)
+    }
+    
+    open func setupXib(constraints: Bool) {
+        guard self.view.isNull else { return }
+        let mainView = type(of: self).initFromNib(className: type(of: self))
         addSubview(mainView)
-        addConstraintsToFit(view: mainView)
-        
+        if constraints {
+            translatesAutoresizingMaskIntoConstraints = false
+            mainView.translatesAutoresizingMaskIntoConstraints = false
+            addConstraintsToFit(view: mainView)
+        } else {
+            mainView.frame = frame
+        }
         view = mainView
     }
     
-    open func loadViewFromNib(className: AnyClass) -> UIView? {
-        let frameworkBundle = Bundle(for: className)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("trrabyte.bundle")
-        let resourceBundle = Bundle(url: bundleURL!)
-        let nib = UINib(nibName: getClassName(), bundle: resourceBundle)
-        let view = nib.instantiate(withOwner: self, options: nil).compactMap { $0 as? UIView}.first
+    open func loadViewFromNib() -> UIView? {
+        let frameworkBundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: className(), bundle: frameworkBundle)
+        let view = nib.instantiate(withOwner: self, options: nil).first as? UIView
         return view
     }
     
-    open func getClassName() -> String {
+    open func className() -> String {
         if let xibName = xibName {
             return xibName
         } else {
